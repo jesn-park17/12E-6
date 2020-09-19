@@ -19,7 +19,7 @@ export class AboutPage {
   }
   compute () {
     this.totalpayableValue1 = ((this.tuitionValue * 0.75 / 100) * this.paymentTerm);
-    this.totalamountValue1 = (this.tuitionValue*1 + this.totalpayableValue1*1);
+    this.totalamountValue1 = (this.tuitionValue*1 + this.totalpayableValue1*);
     this.monthlyValue1 = this.totalamountValue1 / this.paymentTerm;
   }
 
