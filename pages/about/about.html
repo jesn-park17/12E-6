@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Company Name Financial Calculator
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.8/angular.min.js"></script>
+  <b><h4>SIP for School Calculator App </h4></b>
+  <p>
+    Determine the right amount you should loan as you explore and compare the different kinds of payment terms for your installament plans in school. 
+  </p>
+  <p><em>
+    Enter amount: 
+  </em></p>
+
+  <ion-item>
+  <ion-label> Tuition Fee Amount (P): </ion-label>
+  <ion-input type="number" min="0" max="infinity" [(ngModel)]="tuitionValue"></ion-input>
+  </ion-item>
+
+  <p>
+    Select your payment plan below:
+    (12, 18, or 24 months)
+  </p>
+
+  <ion-item>
+  <ion-label> Payment Term: </ion-label>
+  <ion-input type="number" min="12" max="24" step="6" [(ngModel)]="paymentTerm"></ion-input>
+  </ion-item>
+
+  <button ion-button color="danger" (click)="compute()">Compute</button>
+
+  <br /><br />
+    <ion-item *ngIf="totalpayableValue1">
+      <h3> Total Interest Payable: {{totalpayableValue1  | currency: '&#8369;'}} </h3>
+    </ion-item>
+
+    <ion-item *ngIf="totalamountValue1">
+      <h3> Total Amount Payable: {{totalamountValue1  | currency: '&#8369;'}} </h3>
+    </ion-item>
+
+    <ion-item *ngIf="monthlyValue1">
+      <h3> Monthly Payment: {{monthlyValue1 | currency: '&#8369;'}} </h3>
+    </ion-item>
+
+</ion-content>
